@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/9bc8e54730.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Weather Conditions Dashboard</title>
+  </head>
+  <body>
+
+    <!-- using this header section as a jumbotron to show searched city  -->
+    <div id="header" class="jumbotron jumbotron-fluid">        
+          <h1 id="header-content" class="display-2"></h1>                
+    </div>
+
+    <!-- using this main section for all the content of the website  -->
+    <div id="content" class="container">
+        <div class="row">
+
+    <!-- using a column for the sidebar to have the search history         -->
+            <div class="content-sidebar" class="col-md-3"></div>
+                <form>
+                    <label for="city-search">Search City Name:</label>
+                    <div class="form-row">
+                        <input id="city-search" class="form-control"></input>
+                        <button id="search" class="btn" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+    <script src="./assets/script.js"></script>
+  </body>
+</html>  
