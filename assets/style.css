@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 24 px;
+  font-family: "Alkalami", serif;
+}
+
+h3 {
+  font-weight: 700;
+}
+
+span {
+  font-size: small;
+}
+
+.forecast {
+  font-size: x-small;
+}
+
+li:hover {
+  background-color: gray;
+  text-decoration: underline;
+}
