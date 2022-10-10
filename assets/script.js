@@ -60,9 +60,6 @@ function currentWeather(city) {
     const windSpeedMPH = (windSpeed * 2.237).toFixed(1);
     $(currentWind).html(windSpeedMPH + "MPH");
 
-    //coordinates
-    Coords(response.data.coord.lon, response.data.coord.lat);
-    forecast(response.id);
     if (response.cod === 200) {
       cityName = JSON.parse(localStorage.getItem("cityName"));
       console.log(cityName);
@@ -107,11 +104,11 @@ function forcast(cityID) {
       const date = new Date(
         response.list[(i + 1) * 8 - 1].dt * 1000
       ).toLocaleDateString();
-      const weathericon = response.list[(i + 1) * 8 - 1].weather[0].icon;
+      const weathericon = response.data[(i + 1) * 8 - 1].weather[0].icon;
       const URLicon = "http://openweathermap.org/img/wn" + weathericon + ".png";
-      const KelTemp = response.list[(i + 1) * 8 - 1].main.temp;
+      const KelTemp = response.data[(i + 1) * 8 - 1].main.temp;
       const FarTemp = ((KelTemp - 273.5) * 1.8 + 32).toFixed(2);
-      const humidity = response.list[(i + 1) * 8 - 1].main.humidity;
+      const humidity = response.data[(i + 1) * 8 - 1].main.humidity;
       //
       $("#dateDay" + i).html(date);
       $("#imgDay" + i).html("<img src=" + URLicon + ">");

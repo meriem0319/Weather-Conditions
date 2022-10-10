@@ -28,7 +28,7 @@ THEN I am again presented with current and future conditions for that city
 
 ## Screenshot:
 
-<img src="./">
+<img src="./assets/img/weatherapp.png">
 
 ## Deployment:
 
