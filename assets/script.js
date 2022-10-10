@@ -1,6 +1,6 @@
 //storing the searched city
 var city = "";
-
+//declaring variables
 var citySrch = $("#city-srch");
 var currentCity = $("#curr-city");
 var currentTemp = $("#curr-temp");
@@ -41,7 +41,7 @@ function currentWeather(city) {
     console.log(response);
 
     // getting the weather icon
-    const icon = response.weather[0].icon;
+    const icon = response.data.weather[0].icon;
     const iconURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
 
     const date = new Date(response.dt * 1000).toLocaleDateString();
@@ -51,17 +51,17 @@ function currentWeather(city) {
     );
 
     // converting to F
-    const FarTemp = (response.main.temp - 273.15) * 1.8 + 32;
+    const FarTemp = (response.data.main.temp - 273.15) * 1.8 + 32;
     $(currentTemp).html(FarTemp.toFixed(2) + "&#8457");
     //humidity
-    $(currentHum).html(response.main.humidity + "%");
+    $(currentHum).html(response.data.main.humidity + "%");
     //wind - need to convert to mph
-    const windSpeed = response.wind.speed;
+    const windSpeed = response.data.wind.speed;
     const windSpeedMPH = (windSpeed * 2.237).toFixed(1);
     $(currentWind).html(windSpeedMPH + "MPH");
 
     //coordinates
-    Coords(response.coord.lon, response.coord.lat);
+    Coords(response.data.coord.lon, response.data.coord.lat);
     forecast(response.id);
     if (response.cod === 200) {
       cityName = JSON.parse(localStorage.getItem("cityName"));
